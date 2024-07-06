@@ -83,12 +83,10 @@ function createImgMarkup(images) {
 const container = document.querySelector('.gallery');
 container.insertAdjacentHTML("beforeend", createImgMarkup(images));
 
-const imagesDefault = document.querySelectorAll('ul.gallery')
 
-imagesDefault.forEach(image => {
-    image.addEventListener('click', (event) => {
-        event.preventDefault();
-
+    container.addEventListener('click', (event) => {
+      event.preventDefault();
+      
         const target = event.target;
         if (target.nodeName !== 'IMG') return;
         
@@ -102,6 +100,5 @@ imagesDefault.forEach(image => {
 
 instance.show()
     });
-});
 
 
